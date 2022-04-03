@@ -479,7 +479,6 @@ button.white {
 
 /* shop page */
 .page_header {
-    background-image: url('../image/banner/b1.jpg');
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -563,6 +562,63 @@ button.white {
 }
 /* single product page */
 
+/* blog */
+.blog {
+    padding: 150px 150px 0 150px;
+}
+.blog_box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 90px;
+}
+.blog_img {
+    width: 50%;
+    margin-right: 40px;
+}
+.blog_img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.blog_details {
+    width: 50%;
+}
+.blog_details a {
+    font-size: 11px;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.blog_details a::after {
+    content: '';
+    width: 50%;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 4px;
+    right: -70px; 
+    transition: 0.5s;
+}
+.blog_details a:hover {
+    color: #088178;
+}
+.blog_details a:hover::after {
+    background-color: #088178;
+}
+.blog_details h2 {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    font-size: 70px;
+    font-weight: 700;color: #c9cbce;
+    z-index: -1;
+}
+/* blog */
+
 
 
 
@@ -580,6 +636,9 @@ button.white {
     }
     .banner3 .banner-box {
         width: 100%;
+    }
+    .blog {
+        padding: 150px 90px 0 90px;
     }
 }
 @media (max-width: 799px) {
@@ -667,6 +726,24 @@ button.white {
     .single_pro-details {
         width: 100%;
     }
+    .blog {
+        padding: 100px 30px 0 30px;
+    }
+    .blog_box {
+        flex-direction: column;
+    }
+    .blog_img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .blog_details h2 {
+        font-size: 50px;
+        top: -34px;
+    }
+    .blog_details {
+        width: 100%;
+        padding-top: 20px;
+    }
 }
 
 @media (max-width: 560px) {
@@ -729,6 +806,15 @@ button.white {
     }
     .copytext {
         text-align: start;
+    }
+    .blog_details p {
+        font-size: 14px;
+    }
+    .blog_details h4 {
+        font-size: 16px;
+    }
+    .blog_img img {
+        height: auto;
     }
 }
 /* media */
