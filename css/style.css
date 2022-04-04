@@ -651,6 +651,105 @@ button.white {
 }
 /* about */
 
+/* contacts */
+.contact_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact_details .details {
+    width: 40%;
+}
+.contact_details .details span,
+.form_details form span {
+    font-size: 12px;
+}
+.contact_details .details h2,
+.form_details form h2 {
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+.contact_details .details h3 {
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+.contact_details .details li {
+    display: flex;
+    padding: 10px 0;
+}
+.contact_details .details li i {
+    font-size: 14px;
+    padding-right: 22px;
+}
+.contact_details .details li p {
+    margin: 0;
+    font-size: 14px;
+}
+.contact_details .map {
+    width: 55%;
+    height: 400px;
+}
+.contact_details .map iframe {
+    width: 100%;
+    height: 100%;
+}
+.form_details {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e1e1e1;
+}
+
+.form_details form {
+    display: flex;
+    width: 65%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form_details form input,
+.form_details form textarea {
+    width: 100%;
+    padding: 12px 25px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+}
+.form_details form button {
+    background-color: #088178;
+    color: #fff;
+}
+.people .people_wrap {
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+}
+.people .people_wrap img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+.people .people_wrap p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+}
+.people .people_wrap p span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+/* contacts */
+
+
+
+
+
 
 
 
@@ -788,6 +887,13 @@ button.white {
         width: 100%;
         padding-top: 20px;
     }
+    .form_details {
+        flex-direction: column;
+        padding: 30px;
+    }
+    .form_details form {
+        width: 100%;
+    }
 }
 
 @media (max-width: 560px) {
@@ -803,6 +909,20 @@ button.white {
     }
     .about_app h1 {
         font-size: 26px;
+    }
+    .form_details {
+        padding: 40px;
+    }
+    .contact_details {
+        flex-direction: column;
+    }
+    .contact_details .map,
+    .contact_details .details {
+        width: 100%;
+    }
+    .form_details {
+        padding: 0;
+        border: none;
     }
 }
 
@@ -869,6 +989,9 @@ button.white {
     }
     .blog_img img {
         height: auto;
+    }
+    .people .people_wrap {
+        flex-wrap: wrap;
     }
 }
 /* media */
