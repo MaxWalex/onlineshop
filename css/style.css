@@ -144,7 +144,7 @@ button.white {
 .hero h1 {
     color: #088178;
 }
-.hero button {
+.hero a {
     cursor: pointer;
     background-image: url(/image/button.png);
     background-color: transparent;
@@ -1038,7 +1038,7 @@ button.white {
     h2 {
         font-size: 32px;
     }
-    .hero button {
+    .hero a {
         font-weight: 700;
     }
     .hero {
