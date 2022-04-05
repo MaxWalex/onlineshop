@@ -1,0 +1,119 @@
+{
+    "featureProducts": [
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$78",
+        "id": 1,
+        "photo": "./image/products/f1.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$78",
+        "id": 2,
+        "photo": "./image/products/f2.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$78",
+        "id": 3,
+        "photo": "./image/products/f3.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$78",
+        "id": 4,
+        "photo": "./image/products/f4.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$99",
+        "id": 5,
+        "photo": "./image/products/f5.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$109",
+        "id": 6,
+        "photo": "./image/products/f6.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$59",
+        "id": 7,
+        "photo": "./image/products/f7.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Men's Fashion T Shirt",
+        "price": "$69",
+        "id": 8,
+        "photo": "./image/products/f8.jpg"
+      }
+    ],
+    
+    "arivalProducts": [
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$69",
+        "id": 9,
+        "photo": "./image/products/n1.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$69",
+        "id": 10,
+        "photo": "./image/products/n2.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$69",
+        "id": 11,
+        "photo": "./image/products/n3.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$50",
+        "id": 12,
+        "photo": "./image/products/n4.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$78",
+        "id": 13,
+        "photo": "./image/products/n5.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$75",
+        "id": 14,
+        "photo": "./image/products/n6.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$84",
+        "id": 15,
+        "photo": "./image/products/n7.jpg"
+      },
+      {
+        "brand": "adidas",
+        "name": "Cartoon Astronaut T-Shirts",
+        "price": "$69",
+        "id": 16,
+        "photo": "./image/products/n8.jpg"
+      }
+    ]
+}
