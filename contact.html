@@ -80,10 +80,10 @@
         <form>
             <span>LEAVE A MESSAGE</span>
             <h2>We love to hear from you</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="text" placeholder="Your Name" name="your_name">
+            <input type="text" placeholder="Email" name="your_email">
+            <input type="text" placeholder="Subject" name="your_subject">
+            <textarea id="" cols="30" rows="10" placeholder="Your Message" name="your_message"></textarea>
             <button class="normal">Submit</button>
         </form>
         <div class="people">
@@ -170,8 +170,49 @@
             2021, Tech2 etc - HTML CSS Ecommerce Template 
         </div>
     </footer>
-    
+
+    <div class="success">
+        <div class="success_inner">
+            <i class="fa-solid fa-check"></i>
+            <p>Message sent successfully!</p>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
 
     <script src="js/app.js"></script>
+    <script>
+
+
+        const requestFormContact = async (url, method, formData) => {
+            const res = await fetch(url, {
+                method: method,
+                body: formData
+            })
+        
+            if (!res.ok) {
+                throw new Error(`Could not fetch ${url}, status: ${res.status} `)
+            } else {
+                success.classList.add('open')
+            }
+        
+            return await res
+        }
+
+         // send message on a page of contact
+        const formMessage = document.querySelector('.form_details form')
+            
+        const sendMessage = (e) => {
+            e.preventDefault()
+        
+            let formData = new FormData(formMessage)
+        
+            requestFormContact('../sendmessage.php', 'POST', formData)
+                .catch(err => console.log(err))
+        
+                formMessage.reset()
+        }
+        
+        formMessage.addEventListener('submit', e => sendMessage(e))
+    </script>
 </body>
 </html>
