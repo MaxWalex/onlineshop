@@ -1,3 +1,9 @@
+// block success
+const success = document.querySelector('.success'),
+    closeBox = document.querySelector('.success_inner .fa-xmark')
+// block success
+
+
 const bar = document.querySelector('#bar'),
     nav = document.querySelector('#navbar'),
     close = document.querySelector('#close')
@@ -35,6 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!res.ok) {
             throw new Error(`Could not fetch ${url}, status: ${res.status} `)
         }
+
     
         return await res
     }
@@ -110,23 +117,48 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
-    // subscribe to newsletter
-    const newslettersForm = document.querySelector('#newsletters')
-
-    const sendLetter = (e) => {
-        
-        e.preventDefault()
-
-        let formData = new FormData(newslettersForm)
-
-        
-        request('../newsletter.php', 'POST', ' ', formData)
-            .catch(err => console.log(err))
-    }
-    
-    newslettersForm.addEventListener('submit', e => sendLetter(e))
 })
+
+
+
+const requestForm = async (url, method, formData) => {
+    const res = await fetch(url, {
+        method: method,
+        body: formData
+    })
+
+    if (!res.ok) {
+        throw new Error(`Could not fetch ${url}, status: ${res.status} `)
+    } else {
+        success.classList.add('open')
+    }
+
+    return await res
+}
+
+// subscribe to newsletter
+const newslettersForm = document.querySelector('#newsletters')
+
+const sendLetter = (e) => {
+
+    e.preventDefault()
+
+    let formData = new FormData(newslettersForm)
+
+    requestForm('../sendmessage.php', 'POST', formData)
+        .catch(err => console.log(err))
+    
+    newslettersForm.reset()
+}
+
+newslettersForm.addEventListener('submit', e => sendLetter(e))
+
+   
+closeBox.addEventListener('click', () => {
+    success.classList.remove('open')
+})
+
+
 
 
 
