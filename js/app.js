@@ -22,11 +22,14 @@ menuHeader()
 
 
 window.addEventListener('DOMContentLoaded', () => {
-    const getProducts = async (url, method, headers, data) => {
+
+    // fetch
+    const request = async (url, method, headers, body) => {
+        
         const res = await fetch(url, {
             method: method,
-            headers: headers,
-            body: data
+            headers: headers === ' ' ? undefined : headers,
+            body: body
         })
     
         if (!res.ok) {
@@ -34,10 +37,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     
         return await res
-    
     }
     
-    getProducts('../products.json', 'GET', {'Content-Type': 'application/json'})
+    
+    request('../products.json', 'GET', {'Content-Type': 'application/json'})
         .then(response => response.json())
         .then(data => {
             createFeatureProduct(data) 
@@ -46,6 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.log(err))
 
+        // create card layout
     function bulidCardLayout(product) {
         let card
             
@@ -69,6 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
         `
     }
 
+     // create product of feature
     function createFeatureProduct (data) {
         const fProducts = document.querySelector('.feature_products')
 
@@ -79,6 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // create product of arival
     function createArivalProduct (data) {
         const arivalProducts = document.querySelector('.arivals_prodcuts')
 
@@ -89,6 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // show all products on shop page
     function showAllProducts(data) {
         const shopProducts = document.querySelector('.shop_products')
 
@@ -104,7 +111,24 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // subscribe to newsletter
+    const newslettersForm = document.querySelector('#newsletters')
+
+    const sendLetter = (e) => {
+        
+        e.preventDefault()
+
+        let formData = new FormData(newslettersForm)
+
+        
+        request('../newsletter.php', 'POST', ' ', formData)
+            .catch(err => console.log(err))
+    }
+    
+    newslettersForm.addEventListener('submit', e => sendLetter(e))
 })
+
+
 
 
 
