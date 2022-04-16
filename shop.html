@@ -29,46 +29,50 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li id="lg-bag"><a class="cartIcon" href="cart.html"><div class="cartIcon_count">0</div><i class="fa-solid fa-bag-shopping"></i></a></li>
                 <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
         </div>
 
         <div class="mobile">
-            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <a class="cartIcon" href="cart.html"><div class="cartIcon_count">0</div><i class="fa-solid fa-bag-shopping"></i></a>
             <i id="bar" class="fa-solid fa-outdent"></i>
         </div>
     </header>
 
-    <section class="page_header" style="background-image: url('../image/banner/b1.jpg');">
-        <div class="hero_inner">
-            <h2>#stayhome</h2>
-            <p>Save more with coupons $ up to 70% off!</p>
-        </div>
-    </section>
+    <main>
+        <section class="page_header" style="background-image: url('../image/banner/b1.jpg');">
+            <div class="hero_inner">
+                <h2>#stayhome</h2>
+                <p>Save more with coupons $ up to 70% off!</p>
+            </div>
+        </section>
+    
+        <section class="product1 section-p1">
+            <div class="product1_inner">
+                <div class="product1_content pro-container shop_products"></div>
+            </div>
+        </section>
+    
+        <section class="pagination section-p1">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#"><i class="fa-solid fa-right-long"></i></i></a>
+        </section>
+    
+        <section class="newsletter section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newsletters</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+            </div>
+            <form class="form" id="newsletters">
+                <input type="email" placeholder="Your email address" name="emailNewLetter">
+                <button class="normal">Sign Up</button>
+            </form>
+        </section>
+    </main>
 
-    <section class="product1 section-p1">
-        <div class="product1_inner">
-            <div class="product1_content pro-container shop_products"></div>
-        </div>
-    </section>
-
-    <section class="pagination section-p1">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#"><i class="fa-solid fa-right-long"></i></i></a>
-    </section>
-
-    <section class="newsletter section-p1 section-m1">
-        <div class="newstext">
-            <h4>Sign Up For Newsletters</h4>
-            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
-        </div>
-        <form class="form" id="newsletters">
-            <input type="email" placeholder="Your email address" name="emailNewLetter">
-            <button class="normal">Sign Up</button>
-        </form>
-    </section>
+    
 
     <footer class="footer section-p1">
         <div class="col">
@@ -131,6 +135,6 @@
     </div>
     
 
-    <script src="js/app.js"></script>
+    <script src="js/app.js" type="module"></script>
 </body>
 </html>

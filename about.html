@@ -29,84 +29,88 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a class="active" href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li id="lg-bag"><a class="cartIcon" href="cart.html"><div class="cartIcon_count">0</div><i class="fa-solid fa-bag-shopping"></i></a></li>
                 <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
         </div>
 
         <div class="mobile">
-            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <a class="cartIcon" href="cart.html"><div class="cartIcon_count">0</div><i class="fa-solid fa-bag-shopping"></i></a>
             <i id="bar" class="fa-solid fa-outdent"></i>
         </div>
     </header>
 
-    <section class="page_header about_header" style="background-image: url('../image/about/banner.png');">
-        <div class="hero_inner">
-            <h2>#KnowUs</h2>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-        </div>
-    </section>
-
-    <section class="about-head section-p1">
-        <img src="./image/about/a6.jpg" alt="">
-        <div>
-            <h2>Who we are?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolorem enim blanditiis quasi consequuntur provident earum eveniet ullam dolores. Illo sit saepe incidunt quidem esse assumenda impedit quos architecto ullam.</p>
-
-            <abbr title="">Create stunnig images with as much or as little control as you like thanks to a choice of Basic and Creative models</abbr>
-
-            <br>
-
-            <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%">Create stunnig images with as much or as little control as you like thanks to a choice of Basic and Creative models</marquee>
-        </div>
-    </section>
-
-    <section class="about_app section-p1">
-        <h1>Download Our <a href="#">App</a></h1>
-        <div class="video">
-            <video autoplay muted src="./image/about/1.mp4"></video>
-        </div>
-    </section>
-
-    <section class="feature section-p1">
-        <div class="feature_inner">
-            <div class="fe-box">
-                <img src="/image/features/f1.png" alt="">
-                <h6>Free Shipping</h6>
+    <main>
+        <section class="page_header about_header" style="background-image: url('../image/about/banner.png');">
+            <div class="hero_inner">
+                <h2>#KnowUs</h2>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
             </div>
-            <div class="fe-box">
-                <img src="/image/features/f2.png" alt="">
-                <h6>Free Shipping</h6>
+        </section>
+    
+        <section class="about-head section-p1">
+            <img src="./image/about/a6.jpg" alt="">
+            <div>
+                <h2>Who we are?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolorem enim blanditiis quasi consequuntur provident earum eveniet ullam dolores. Illo sit saepe incidunt quidem esse assumenda impedit quos architecto ullam.</p>
+    
+                <abbr title="">Create stunnig images with as much or as little control as you like thanks to a choice of Basic and Creative models</abbr>
+    
+                <br>
+    
+                <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%">Create stunnig images with as much or as little control as you like thanks to a choice of Basic and Creative models</marquee>
             </div>
-            <div class="fe-box">
-                <img src="/image/features/f3.png" alt="">
-                <h6>Free Shipping</h6>
+        </section>
+    
+        <section class="about_app section-p1">
+            <h1>Download Our <a href="#">App</a></h1>
+            <div class="video">
+                <video autoplay muted src="./image/about/1.mp4"></video>
             </div>
-            <div class="fe-box">
-                <img src="/image/features/f4.png" alt="">
-                <h6>Free Shipping</h6>
+        </section>
+    
+        <section class="feature section-p1">
+            <div class="feature_inner">
+                <div class="fe-box">
+                    <img src="/image/features/f1.png" alt="">
+                    <h6>Free Shipping</h6>
+                </div>
+                <div class="fe-box">
+                    <img src="/image/features/f2.png" alt="">
+                    <h6>Free Shipping</h6>
+                </div>
+                <div class="fe-box">
+                    <img src="/image/features/f3.png" alt="">
+                    <h6>Free Shipping</h6>
+                </div>
+                <div class="fe-box">
+                    <img src="/image/features/f4.png" alt="">
+                    <h6>Free Shipping</h6>
+                </div>
+                <div class="fe-box">
+                    <img src="/image/features/f5.png" alt="">
+                    <h6>Free Shipping</h6>
+                </div>
+                <div class="fe-box">
+                    <img src="/image/features/f6.png" alt="">
+                    <h6>Free Shipping</h6>
+                </div>
             </div>
-            <div class="fe-box">
-                <img src="/image/features/f5.png" alt="">
-                <h6>Free Shipping</h6>
+        </section>
+    
+        <section class="newsletter section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newsletters</h4>
+                <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
             </div>
-            <div class="fe-box">
-                <img src="/image/features/f6.png" alt="">
-                <h6>Free Shipping</h6>
-            </div>
-        </div>
-    </section>
+            <form class="form" id="newsletters">
+                <input type="email" placeholder="Your email address" name="emailNewLetter">
+                <button class="normal">Sign Up</button>
+            </form>
+        </section>
+    </main>
 
-    <section class="newsletter section-p1 section-m1">
-        <div class="newstext">
-            <h4>Sign Up For Newsletters</h4>
-            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
-        </div>
-        <form class="form" id="newsletters">
-            <input type="email" placeholder="Your email address" name="emailNewLetter">
-            <button class="normal">Sign Up</button>
-        </form>
-    </section>
+    
 
     <footer class="footer section-p1">
         <div class="col">
@@ -169,6 +173,6 @@
     </div>
     
 
-    <script src="js/app.js"></script>
+    <script src="js/app.js" type="module"></script>
 </body>
 </html>
