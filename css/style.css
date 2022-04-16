@@ -123,10 +123,14 @@ button.white {
     top: 0;
     left: 0;
 }
+#bar {
+    cursor: pointer;
+}
 #navbar {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 #navbar li {
     padding: 0 20px;
@@ -285,6 +289,11 @@ button.white {
     font-weight: 700;
     color: #088178;
 }
+.addToCart {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
 .product1 .pro a i {
     width: 40px;
     height: 40px;
@@ -293,9 +302,7 @@ button.white {
     background-color: #e8f6ea;
     color: #088178;
     border: 1px solid #cce7d0;
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
+    pointer-events: none;
 }
 .pro-container {
     display: flex;
@@ -783,6 +790,21 @@ button.white {
 /* contacts */
 
 /* cart page */
+.cartIcon {
+    position: relative;
+}
+.cartIcon_count {
+    position: absolute;
+    right: -5px;
+    top: -6px;
+    font-size: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
 .cart {
     overflow-x: auto;
 }
@@ -801,6 +823,11 @@ button.white {
 .cart table input {
     width: 70px;
     padding: 10px 5px 10px 15px;
+}
+.cart table select {
+    outline: none;
+    width: 70px;
+    padding: 10px 5px 10px 5px;
 }
 .cart table thead {
     border: 1px solid #e2e9e1;
