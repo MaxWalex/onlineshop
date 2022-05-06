@@ -1,3 +1,5 @@
+import * as cart from './cart.js';
+
 // block success
 const success = document.querySelector('.success'),
     closeBox = document.querySelector('.success_inner .fa-xmark')
@@ -61,11 +63,11 @@ window.addEventListener('DOMContentLoaded', () => {
         let card
             
         return card = `
-        <div class="pro">
+        <div class="pro" id="pro_${product.id}">
             <a href="/sproduct.html"><img src="${product.photo}" alt=""></a>
             <div class="des">
                 <span>${product.brand}</span>
-                <a href="/sproduct.html"><h5>${product.name}</h5></a>
+                <a href="/sproduct.html"><h5 class="pro_name">${product.name}</h5></a>
                 <div class="star">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -73,9 +75,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <h4>${product.price}</h4>
+                <h4 class="pro_price">${product.price}</h4>
             </div>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="addToCart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         `
     }
@@ -107,7 +109,6 @@ window.addEventListener('DOMContentLoaded', () => {
         const shopProducts = document.querySelector('.shop_products')
 
         if (shopProducts) {
-            console.log(data)
             data.featureProducts.forEach(product => {
                 shopProducts.insertAdjacentHTML('beforeend', bulidCardLayout(product))
             });
@@ -118,8 +119,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 })
-
-
 
 const requestForm = async (url, method, formData) => {
     const res = await fetch(url, {
@@ -157,6 +156,7 @@ newslettersForm.addEventListener('submit', e => sendLetter(e))
 closeBox.addEventListener('click', () => {
     success.classList.remove('open')
 })
+
 
 
 
