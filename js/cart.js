@@ -7,8 +7,15 @@ window.addEventListener('DOMContentLoaded', () => {
     // count of numer products
     totalOfCount[0].innerHTML = countProductsInCart.length;
     totalOfCount[1].innerHTML = countProductsInCart.length;
-
+    checkCartTable()
 })
+
+function checkCartTable() {
+    const tableCart = document.querySelector('.cart tbody')
+    if (tableCart.children.length === 0) {
+        tableCart.insertAdjacentHTML("beforeend", `<td>Cart is empty</td>`)
+    } 
+}
 
 document.querySelector('main').addEventListener('click', e => {
     e.preventDefault()
@@ -27,7 +34,10 @@ document.querySelector('main').addEventListener('click', e => {
         }
 
         saveToLocalStorage(createProductLocalStorage)
+         
     }
+
+    removeProductOfLocalStorage(elTarget)
 })
 
 // Local Storage
@@ -44,7 +54,6 @@ function checkLocalStorage() {
 function saveToLocalStorage(objProduct) {
 
     checkLocalStorage()
-
 
     cart.push(objProduct)
     localStorage.setItem('cart', JSON.stringify(cart))
@@ -67,8 +76,8 @@ const conclusionProdusts = () => {
 
     products.forEach(item => {
         createProduct = `
-        <tr id="${item.id}">
-            <td style="text-align: center;"><a href="#"><i class="fa-solid fa-circle-xmark"></i></a></td>
+        <tr class="product_item" id="${item.id}">
+            <td class="delete_product" style="text-align: center;"><a href="#"><i class="fa-solid fa-circle-xmark"></i></a></td>
             <td><img src="${item.imageLink}" alt=""></td>
             <td class="itemName">${item.name}</td>
             <td><select>
@@ -114,9 +123,61 @@ productsOfCart.forEach(item => {
             }
         })
         localStorage.setItem('cart', JSON.stringify(cart))
-        console.log(cart)
+        if (document.querySelector('.cart')) {
+            cartTotals()
+        }
     })  
 })
 
+function removeProductOfLocalStorage(elTarget) {
+    checkLocalStorage()
+
+    if (elTarget.classList.contains('fa-circle-xmark')) {
+        let productEl = elTarget.closest('.product_item')
+
+        cart.splice(cart.indexOf(productEl), 1)
+        localStorage.setItem('cart', JSON.stringify(cart))
+
+        productEl.remove()
+
+        let countProductsInCart = JSON.parse(localStorage.getItem('cart'))
+        // count of numer products
+        totalOfCount[0].innerHTML = countProductsInCart.length;
+        totalOfCount[1].innerHTML = countProductsInCart.length;
+
+        checkCartTable()
+    }
+    if (document.querySelector('.cart')) {
+        cartTotals()
+    }
+}
+
+function cartTotals() {
+    const cartSubTotal = document.querySelector('.cart_subtotal td + td');
+    const itemSubTotals = document.querySelectorAll('.itemSubTotal');
+    const cartTotal = document.querySelector('.cart_total td + td strong');
+    const cartShipping = document.querySelector('.cart_shipping td + td span')
+
+    let subTotalSum = 0
+
+    itemSubTotals.forEach(item => {
+        let current = Number(item.innerText.slice(1))
+
+        subTotalSum = subTotalSum + current
+    })
+    
+    cartSubTotal.innerText = '$ ' + subTotalSum;
+
+    if (Number(cartSubTotal.innerText.slice(1)) >= 500) {
+        cartTotal.innerText = `$ ${subTotalSum}`;
+        cartShipping.innerText = 'Free'
+    } else {
+        cartShipping.innerText = '$ 10'
+        cartTotal.innerText = `$ ${10 + subTotalSum}`
+    }
+}
+if (document.querySelector('.cart')) {
+    cartTotals()
+}
 
 // localStorage.clear()
